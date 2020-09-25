@@ -10,6 +10,7 @@ public class Tester {
 		grafo.addNode(3);
 		grafo.addEdge(1,2);
 		grafo.addEdge(1,3);
+		grafo.addEdge(1,3);
 		grafo.addEdge(1,5);
 		grafo.addEdge(10,2);
 		grafo.removeNode(1);

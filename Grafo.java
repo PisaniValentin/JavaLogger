@@ -1,16 +1,12 @@
 package TDAGrafo;
 
 import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
 import java.util.Map.Entry;
-import java.util.Set;
 import java.util.logging.ConsoleHandler;
 import java.util.logging.Handler;
 import java.util.logging.Level;
-import java.util.logging.LogRecord;
 import java.util.logging.Logger;
-import java.util.logging.Filter;
 
 public class Grafo implements GraphD {
 	protected Map<Integer,Integer> nodos;
@@ -26,7 +22,7 @@ public class Grafo implements GraphD {
 			Handler hnd = new ConsoleHandler();
 			hnd.setLevel(Level.INFO);
 			logger.addHandler(hnd);
-			logger.setLevel(Level.WARNING);
+			logger.setLevel(Level.INFO);
 			
 			Logger rootLogger = logger.getParent();
 			for (Handler h : rootLogger.getHandlers()){
@@ -60,7 +56,7 @@ public class Grafo implements GraphD {
 				logger.warning("El nodo: "+node2+" no pertenece al grafo");
 			}else {
 				//si estan los 2 nodos y el arco no pertenece al grafo entonces lo agrego.
-				if(!estaArco && estaNode1 && estaNode2) {
+				if(!estaArco) {
 					arcos.put(key, arco);
 					logger.info("Se ha agregado el arco de: "+arco);
 				}else {

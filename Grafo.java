@@ -24,7 +24,7 @@ public class Grafo implements GraphD {
 		if(logger==null) {
 			logger = Logger.getLogger(Grafo.class.getName());
 			Handler hnd = new ConsoleHandler();
-			hnd.setLevel(Level.FINE);
+			hnd.setLevel(Level.INFO);
 			logger.addHandler(hnd);
 			logger.setLevel(Level.WARNING);
 			
@@ -59,9 +59,10 @@ public class Grafo implements GraphD {
 			if(estaNode2 == false) {
 				logger.warning("El nodo: "+node2+" no pertenece al grafo");
 			}else {
+				//si estan los 2 nodos y el arco no pertenece al grafo entonces lo agrego.
 				if(!estaArco && estaNode1 && estaNode2) {
 					arcos.put(key, arco);
-					logger.info("Se ha agregado el arco de: "+node1+" a "+node2);
+					logger.info("Se ha agregado el arco de: "+arco);
 				}else {
 					logger.warning("El arco "+ key + " ya existia");
 				}
